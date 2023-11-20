@@ -1,6 +1,7 @@
-<%= simple_form_for(@list, @bookmark) do |f| %>
+<%= simple_form_for [@list, @bookmark] do |f| %>
+<%# must use square bracket for line above as it is an array %>
   <%= f.input :comment %>
   <%# f.association creates a dropdown %>
-  <%= f.association :movie%>
+  <%= f.association :movie %>
    <%= f.submit "Bookmark Movie", class: "btn btn-primary" %>
 <% end %>

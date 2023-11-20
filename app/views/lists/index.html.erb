@@ -1,7 +1,24 @@
-<h3>Lists</h3>
+<div class="banner"style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+    <h1><strong>My lists</strong></h1>
+  </div>
+</div>
 
-<ul>
-  <% @lists.each do |list| %>
-    <li><%= list.title %></li>
-  <% end %>
-</ul>
+
+<div class="container">
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fapnews.com%2Farticle%2Fmovies-fall-calendar-2023-aecfaf2f7d8cfec6154bc62ed9a9cead&psig=AOvVaw2ZFWbp0tjpI3kDF4ESVeuM&ust=1700324185758000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCOCV8Kq3y4IDFQAAAAAdAAAAABAJ);">
+        <%= link_to list.name, list_path(list) %>
+      </div>
+
+    <% end %>
+  </div>
+</div>
+
+
+<div class="container">
+
+<%= link_to "Create new list!", new_list_path(@list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-primary"%>
+
+</div>
